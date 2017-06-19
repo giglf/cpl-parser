@@ -14,7 +14,7 @@
 			return VARIABLE;
 		}
 
-[0-9]	{
+[0-9]+	{
 			yylval.iValue = atoi(yytext);
 			return INTEGER;
 		}
