@@ -1,0 +1,23 @@
+abc = 0;
+aaa = 10;
+while(abc<5){
+	abc = abc + 1;
+	print(abc);
+}
+
+if(abc==5){
+	printb(true);
+}
+
+if(aaa!=10){
+	printb(false);
+}
+else if(abc==5 && aaa==10){
+	printb(true);
+}
+
+printb(!false);
+printb(false && true);
+printb(false || true);
+
+
