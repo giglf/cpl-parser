@@ -162,7 +162,7 @@ int yyerror(char *s)
 
 int main(int args, char **argv)
 {
-	if(args > 2 && argv[1][1] == 'h'){
+	if(args > 1 && argv[1][1] == 'h'){
 		printf("Usage:\n");
 		printf("\t%s\t\tEnter interactive model\n", argv[0]);
 		printf("\t%s <file>\tParse the file and output on shell\n", argv[0]);
