@@ -3,6 +3,7 @@
 #include "parse.hpp"
 
 
+//对传入的节点进行遍历分析操作
 int ex(NodeType *p){
 
 	if(!p) return 0;
@@ -11,7 +12,7 @@ int ex(NodeType *p){
 		case typeCon:
 			return p->con.value;
 		case typeId:
-			return intTable[*(p->id.name)];
+			return intTable[*(p->id.name)];		//从intTable中提取变量的值
 		case typeOpr:
 			switch (p->opr.oper) {
 				case WHILE:
@@ -28,7 +29,7 @@ int ex(NodeType *p){
 					printf("%d\n", ex(p->opr.op[0]));
 					return 0;
 				case PRINTB:
-					printf("%s\n", ex(p->opr.op[0])==0? "false" : "true");
+					printf("%s\n", ex(p->opr.op[0])==0? "false" : "true");	//printb只能输出是true还是false，默认值为0的为false，否则为true
 					return 0;
 				case ';':
 					ex(p->opr.op[0]);

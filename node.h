@@ -5,23 +5,23 @@
 #include <map>
 
 typedef enum{
-    typeCon,
-    typeId,
-    typeOpr
+    typeCon, 	//常量类型
+    typeId,		//变量标识符
+    typeOpr		//操作类型
 } NodeEnum;
 
 typedef struct{
-    int value;
+    int value;	//常量
 } ConNodeType;
 
 typedef struct{
-    std::string *name;
+    std::string *name; //指向变量名
 }IdNodeType;
 
 typedef struct{
-    int oper;
-    int nops;
-    struct NodeTypeTag *op[1];
+    int oper;		//操作类型
+    int nops;		//操作数个数
+    struct NodeTypeTag *op[1];	//扩展节点
 }OprNodeType;
 
 typedef struct NodeTypeTag{
@@ -34,6 +34,6 @@ typedef struct NodeTypeTag{
     };
 }NodeType;
 
-extern std::map<std::string, int> intTable;
+extern std::map<std::string, int> intTable;		//储存变量对应的int值
 
 #endif //CPL_COMPILER_NODE_H

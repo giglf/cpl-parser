@@ -92,6 +92,8 @@ expr : INTEGER			{$$ = con($1);}
 /* 计算从NodeType结构体地址起始到con地址的距离，即type的大小 */
 #define SIZEOF_NODETYPE ((char*)&p->con - (char*)p)
 
+
+//构建常量node
 NodeType *con(int value){
 	NodeType *p;
 	size_t nodeSize;
@@ -106,6 +108,8 @@ NodeType *con(int value){
 	return p;
 }
 
+
+//构建变量类型的node
 NodeType *id(std::string *name){
 	NodeType *p;
 	size_t nodeSize;
@@ -121,6 +125,7 @@ NodeType *id(std::string *name){
 }
 
 
+//构建操作类型的node
 NodeType *opr(int oper, int nops, ...){
 	va_list ap;
 	NodeType *p;
