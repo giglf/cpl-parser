@@ -27,6 +27,9 @@ int ex(NodeType *p){
 				case PRINT:
 					printf("%d\n", ex(p->opr.op[0]));
 					return 0;
+				case PRINTB:
+					printf("%s\n", ex(p->opr.op[0])==0? "false" : "true");
+					return 0;
 				case ';':
 					ex(p->opr.op[0]);
 					return ex(p->opr.op[1]);

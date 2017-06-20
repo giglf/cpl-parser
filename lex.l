@@ -21,6 +21,17 @@
 "if"		return IF;
 "else"		return ELSE;
 "print"		return PRINT;
+"printb"    return PRINTB;
+
+"false"     {
+                yylval.iValue = 0;
+                return INTEGER;
+            }
+
+"true"      {
+                yylval.iValue = 1;
+                return INTEGER;
+            }
 
 [a-zA-z][a-zA-z0-9]*	{
 							yylval.varName = new std::string(yytext);
