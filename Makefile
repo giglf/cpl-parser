@@ -1,4 +1,4 @@
-all: codegen
+all: cpl-parser
 
 OBJS = parse.o	\
 	   codegen.o\
@@ -7,7 +7,7 @@ OBJS = parse.o	\
 CPPFLAGS = -std=c++11
 
 clean:
-	$(RM) -rf parse.cpp parse.hpp lex.cpp $(OBJS)
+	$(RM) -rf parse.cpp parse.hpp lex.cpp $(OBJS) 
 
 
 parse.cpp: parse.y
@@ -22,5 +22,5 @@ lex.cpp: lex.l parse.hpp
 %.o: %.cpp
 	g++ -c $(CPPFLAGS) -o $@ $<
 
-codegen: $(OBJS)
+cpl-parser: $(OBJS)
 	g++ -o $@ $(OBJS)
