@@ -4,7 +4,7 @@
 
 这是一个简单的cpl (Core Programming Language)的解析器
 
-
+learn文件夹中内容为学习测试flex和bison的一些例子
 
 ## 环境
 
